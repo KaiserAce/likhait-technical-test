@@ -88,7 +88,6 @@ const HistoryPage: React.FC = () => {
     try {
       await createCategory(data);
       setIsModalOpen(false);
-      fetchExpenses();
     } catch (error) {
       console.error("Error creating category:", error);
       throw error;
