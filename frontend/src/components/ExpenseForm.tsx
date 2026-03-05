@@ -62,6 +62,8 @@ export function ExpenseForm({
 
   }
 
+  const today = new Date().toLocaleDateString('en-ca');
+
   return (
     <form onSubmit={handleSubmit} style={formStyle}>
       <TextField
@@ -103,6 +105,7 @@ export function ExpenseForm({
         type="date"
         value={formData.date}
         onChange={(e) => handleChange("date", e.target.value)}
+        max={today}
         error={errors.date}
         fullWidth
         required
