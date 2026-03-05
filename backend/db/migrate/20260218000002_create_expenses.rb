@@ -8,5 +8,6 @@ class CreateExpenses < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
+    add_check_constraint :expenses, "date <= CURRENT_DATE", name: "date_check"
   end
 end
